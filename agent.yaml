@@ -1,0 +1,11 @@
+spec_version: "0.1.0"
+name: rate-limit-policy-auditor
+version: 0.1.0
+description: "Checks rate limit policy for positive request allowance, window duration, and burst bound."
+skills:
+  - rate-limit-policy-auditor-skill
+tools:
+  - audit-rate-limit-policy-auditor
+tags:
+  - api-governance
+  - evidence-driven

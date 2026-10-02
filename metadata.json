@@ -1,0 +1,35 @@
+{
+  "slug": "rate-limit-policy-auditor",
+  "title": "Rate Limit Policy Auditor",
+  "category": "api-governance",
+  "description": "Checks rate limit policy for positive request allowance, window duration, and burst bound.",
+  "decision": "Checks rate limit policy for positive request allowance, window duration, and burst bound.",
+  "limitations": "Uses caller-declared evidence only; does not verify external systems, legal requirements, or real-world truth. Human review remains required.",
+  "inputs": "A JSON object containing the documented fields. Numeric thresholds are deterministic and visible in agent.py.",
+  "good": {
+    "requests_per_window": 600,
+    "window_seconds": 60,
+    "burst_limit": 100
+  },
+  "bad": {},
+  "rules": [
+    [
+      "requests_per_window",
+      "requests per window",
+      "min",
+      1
+    ],
+    [
+      "window_seconds",
+      "window duration",
+      "min",
+      1
+    ],
+    [
+      "burst_limit",
+      "burst limit",
+      "max",
+      10000
+    ]
+  ]
+}

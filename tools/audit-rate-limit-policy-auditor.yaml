@@ -1,0 +1,18 @@
+name: audit-rate-limit-policy-auditor
+description: Run Rate Limit Policy Auditor checks
+version: 0.1.0
+input_schema:
+  type: object
+  properties:
+    payload: {type: object}
+  required: [payload]
+output_schema:
+  type: object
+  properties:
+    status: {type: string}
+    score: {type: object}
+    findings: {type: array}
+implementation:
+  type: script
+  path: audit-rate-limit-policy-auditor.py
+  runtime: python3
